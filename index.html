@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08090d"><meta name="description" content="SACHIN AI FLOW — create cinematic AI videos and images.">
+<link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg">
+<title>SACHIN AI FLOW</title><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<aside class="sidebar">
+  <div class="brand"><span class="brandmark">S</span><span>SACHIN <b>AI FLOW</b></span></div>
+  <button class="nav active" data-page="create">✦ &nbsp; Create</button>
+  <button class="nav" data-page="projects">▣ &nbsp; Projects</button>
+  <button class="nav" data-page="edit">✎ &nbsp; Edit photo</button>
+  <div class="sidebottom"><div class="api-dot" id="apiDot"></div><span id="apiStatus">Checking AI connection…</span><button id="installBtn" class="install hidden">＋ Install app</button></div>
+</aside>
+<main>
+<header><div><div class="eyebrow">YOUR CREATIVE STUDIO</div><h1 id="pageTitle">Create something amazing</h1></div><div class="avatar">S</div></header>
+<section id="createPage" class="page">
+  <div class="quick">
+    <button class="quickcard selected" data-mode="text"><span>✦</span><b>Text to video</b><small>Turn a prompt into a film</small></button>
+    <button class="quickcard" data-mode="image"><span>▧</span><b>Image to video</b><small>Animate a still image</small></button>
+    <button class="quickcard" data-mode="edit"><span>✎</span><b>Edit photo</b><small>Change a photo with AI</small></button>
+  </div>
+  <div class="workspace">
+    <div class="panel">
+      <div class="panelhead"><div><span class="eyebrow">NEW PROJECT</span><h2 id="modeTitle">Text to video</h2></div><span class="pill">GEMINI AI</span></div>
+      <label for="prompt">Describe your video</label>
+      <textarea id="prompt" rows="5" placeholder="A cinematic golden lion walking through a royal palace, dramatic camera push-in, warm golden light, realistic fur, epic atmosphere…"></textarea>
+      <div class="prompttools"><button class="chip" id="enhance">✦ Improve prompt</button><span class="hint">Be specific about subject, movement, camera and lighting.</span></div>
+      <div id="uploadWrap" class="upload hidden"><label for="imageFile" class="drop"><span>＋</span><b>Upload reference image</b><small>JPG, PNG or WEBP · up to 20 MB</small></label><input id="imageFile" type="file" accept="image/*"></div>
+      <div class="settings">
+        <div><label>Aspect ratio</label><select id="ratio"><option value="9:16">Portrait · 9:16</option><option value="16:9">Landscape · 16:9</option></select></div>
+        <div><label>Output</label><div class="readonly">AI video · MP4</div></div>
+      </div>
+      <button id="generate" class="primary">✦ Generate video <span>→</span></button>
+      <p class="fine">AI generation may take time and uses your Google AI API quota/billing.</p>
+    </div>
+    <div class="preview panel">
+      <div class="previewtop"><b>Preview</b><span class="pill" id="previewStatus">READY</span></div>
+      <div class="previewstage" id="previewStage"><div class="orb">✦</div><b>Your next creation starts here</b><small>Describe an idea and generate your first video.</small></div>
+      <div id="resultActions" class="resultactions hidden"><a id="downloadVideo" class="secondary" download="sachin-ai-flow.mp4">↓ Download video</a><button id="speak" class="secondary">◖ Hindi voice preview</button></div>
+    </div>
+  </div>
+</section>
+<section id="editPage" class="page hidden">
+ <div class="panel editpanel"><span class="eyebrow">NANO BANANA IMAGE MODEL</span><h2>Edit a photo with AI</h2><p class="muted">Upload an image and describe the changes you want.</p>
+ <label class="drop"><span>＋</span><b>Choose photo</b><small>JPG, PNG or WEBP · up to 20 MB<input id="editFile" type="file" accept="image/*"></small></label>
+ <label for="editPrompt">Edit instructions</label><textarea id="editPrompt" rows="3" placeholder="Make this look like a cinematic movie poster, keep the person recognizable…"></textarea>
+ <button id="editImage" class="primary">✦ Edit image</button><div id="editResult" class="editresult"></div></div>
+</section>
+<section id="projectsPage" class="page hidden">
+ <div class="projecthead"><div><span class="eyebrow">YOUR LIBRARY</span><h2>Recent projects</h2></div><button class="secondary" id="newProject">＋ New project</button></div>
+ <div id="projectGrid" class="projectgrid"><div class="empty">Your creations will appear here.</div></div>
+</section>
+<footer> SACHIN AI FLOW <span>Independent creative tool · Not affiliated with Google Flow</span></footer>
+</main>
+<script src="/app.js"></script>
+</body></html>
