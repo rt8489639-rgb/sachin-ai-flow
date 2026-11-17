@@ -5,6 +5,9 @@ services:
     plan: free
     buildCommand: npm install
     startCommand: npm start
+    healthCheckPath: /api/health
     envVars:
+      - key: FAL_KEY
+        sync: false
       - key: GEMINI_API_KEY
         sync: false
